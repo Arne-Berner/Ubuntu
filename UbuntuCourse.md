@@ -10,24 +10,24 @@ sechste Spalte: Timestamps -> in linux gibt es immer 3(4) timestamps (last modif
 
 ### . und   
 . ist current directory  
-.. ist parent directo  
+.. ist parent directoy  
 ~ ist $HOME 
-cd ohne etwas ist meistens auch $HO  
+cd ohne etwas ist meistens auch $HOME  
 
-### tee, touch und tail/c  
-tee zeigt schickt etwas an das Terminal zum einsehen, aber auch in Datei  
+### tee, touch und tail/cut  
+tee zeigt schickt etwas an das Terminal zum einsehen, aber auch in die angegebene Datei  
 
 ### cmd parameter und pipe operator |
 cmd 1>success.txt schickt den output an success, wenn es funktioniert hat (wegen der 1), man kann auch cmd >success.txt stattdessen schreiben  
-cmd 2>/dev/Null schickt den output in den "Trash", ohne recovery, wenn die Aktion nicht funktioniert h  
+cmd 2>/dev/Null schickt den output in den "Trash", ohne recovery, wenn die Aktion nicht funktioniert hat  
 cmd 1>success.txt 2>failed.txt kann man auch so kombinieren.  
 cmd 1>>success.txt macht einen append anstatt zu ersetzen.  
-cmd 1>f1 2>&1 schickt beides zu success. &1 ist also der stream für success. Um beides zu f1 zu schicken kann man auch cmd &>f1 mache  
+cmd 1>f1 2>&1 schickt beides zu success. &1 ist also der stream für success. Um beides zu f1 zu schicken kann man auch cmd &>f1 machen  
 für die meisten cmds ist der standart output pts(zahl in der man ist)  
 der | operator sendet den output stream eines Programms als input an das Programm hinter |  
-nutzt man cat f1 | cat und der Inhalt von f1 ist f2, dann wird f2 auf dem Bildschirm ausgegeben. Benutzt man aber cat f1 | xargs cat dann wird der Inhalt von f2 ausgegebe  
-cat `cat f1` bedeutet, dass cat (inhalt von f1) ausgeführt wird. 
-cat \$(cat f1) bedeutet, dass gleiche wie cat `cat f  
+nutzt man cat f1 | cat und der Inhalt von f1 ist f2, dann wird f2 auf dem Bildschirm ausgegeben. Benutzt man aber cat f1 | xargs cat dann wird der Inhalt von f2 ausgegeben  
+cat \`cat f1\` bedeutet, dass cat (inhalt von f1) ausgeführt wird. 
+cat ```$(cat f1)``` bedeutet, dass gleiche wie cat \`cat f1\`  
 Mit ; kann man commands hintereinander ausführen. Also sowas wie update ; upgrade  
 Mit & kann man commands gleichzeitig ausführen. also sowas wie xclock & xlock  
 Mit && wird der zweite command ausgeführt, wenn der erste succeeded. also dateee && xclock executed xclock nicht  
@@ -194,7 +194,6 @@ Wie könnte ich die Episoden sortieren?
 
 
 ### Script Ideen
-Git scripte zum erstellen eines repositories und verbinden mit meinem computer. (lerne gleichzeitig git)
 Dateien mit Datum erstellen. 
 ```bash
 $(date +%Y%m)

@@ -42,11 +42,13 @@ pkill name (hier wird jeder prozess getötet, welcher name beinhaltet)
 
 ### commands on the flY (cat and cut and sort)
 cat gibt aus, was man in der datei hat  
-cut kann genutzt werden, um die Spalten anzuzeigen. Also cat /etc/passwd | cut -f2,3 (die zweite und dritte spalte) -d: (durch : getrennt)  
+cat file1.txt file2.txt > output.txt nimmt den inhalt der beiden und packt sie in output
+cut kann genutzt werden, um die Spalten anzuzeigen. Also cat /etc/passwd | cut -f2,3 (die zweite und dritte spalte) -d ' ' (durch space getrennt)  
 cat /etc/passwd| head-15 | sort -k4 (column4 ) -t: (durch : getrennt) -n (nach zahlen)
 cat filename | uniq gibt nur einzigeartige Wörter aus mit -d gibt duplicates an  
 cat f5 | tr  ia XY (i wird durch X und a durch Y ersetzt)
 cat /dev/urandom | tr -dc \!0-9a-zA-Z | head -c 10 erstellt ein random passwort mit 10 zeichen. 
+cat /dev/urandom | tr -dc a-z | head -c10000 | grep  --color 'arne' -o | wc -l (ist lustig)
 paste names.txt lastnames.txt -d" " pasted die zeilen der ersten datei in die zeilen der zweiten datei mit dem delimiter " " und gibt sie auf dem stream aus. (sie werden nicht wirklich in die datei kopiert)
 join names.txt lastnames.txt (joined die zeilen, aber löscht die Wörter raus, die gedoppelt sind)
 
@@ -158,6 +160,7 @@ apt-file search peter (sucht peter im remote repository)
 
 ### vim
 keine schreibrechte? :w !sudo tee %
+ein command soll bearbeitet werden? vi drücken und in vim bearbeiten. Dann mit :wq speichern
 
 ### Automate Tasks
 mit at now + 3 days kann ich sagen, dass etwas in 3 tagen ausgeführt werden soll.  
@@ -177,6 +180,10 @@ tar xf filename extrahiert eine tar file
 tar tf filename zeigt den content an
 tar rf filename fügt eine datei der tar hinzu
 
+### Encryption
+Pretty good Privacy (PGP) kann dinge encrypten  
+
+
 ### Shellscript
 \#! ist shebang und gibt den interpreter an. Also z.b. das etwas mit bash übersetzt werden soll.
 
@@ -191,6 +198,9 @@ Können die einzelnen Terminals miteinander kommunzieren, weil sie das über den
 
 Wie kann man direkt von der Ausgabe dinge nehmen? Gibt es da vim aktionen?  
 Wie könnte ich die Episoden sortieren?
+
+Wie kann man files erstellen mit zugriffsrechten ohne chmod?
+Wie ist das VIM command zu verstehen mit den schreibrechten?
 
 
 ### Script Ideen
